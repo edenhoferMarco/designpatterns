@@ -1,5 +1,5 @@
 package de.marcoedenhofer.designpatterns.factorymethod;
 
 public interface ITeaFactory {
-    ITea createTea(TeaTypes teaType) throws Exception;
+    ITea createTea(TeaTypes teaType) throws IllegalStateException;
 }

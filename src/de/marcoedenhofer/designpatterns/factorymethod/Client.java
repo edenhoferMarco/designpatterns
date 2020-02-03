@@ -1,17 +1,22 @@
 package de.marcoedenhofer.designpatterns.factorymethod;
 
+import de.marcoedenhofer.designpatterns.factorymethod.blacktea.BlackTeaFactory;
+import de.marcoedenhofer.designpatterns.factorymethod.greentea.GreenTeaFactory;
+
 import java.util.List;
 
 public class Client {
     public static void main(String[] args) {
-        ITeaFactory teaFactory = new TeaFactory();
+        ITeaFactory greenTeaFactory = new GreenTeaFactory();
+        ITeaFactory blackTeaFactory = new BlackTeaFactory();
         try {
-            ITea greenTea = teaFactory.createTea(TeaTypes.GREEN);
-            ITea blackTea = teaFactory.createTea(TeaTypes.BLACK);
-            ITea fruitTea = teaFactory.createTea(TeaTypes.FRUIT);
-            List<ITea> teas = List.of(greenTea, blackTea, fruitTea);
+            ITea normalGreenTea = greenTeaFactory.createTea(TeaTypes.NORMAL);
+            ITea expensiveGreenTea = greenTeaFactory.createTea(TeaTypes.EXPENSIVE);
+            ITea normalBlackTea = blackTeaFactory.createTea(TeaTypes.NORMAL);
+            ITea expensiveBlackTea = blackTeaFactory.createTea(TeaTypes.EXPENSIVE);
+            List<ITea> teas = List.of(normalGreenTea, expensiveGreenTea, normalBlackTea, expensiveBlackTea);
             teas.forEach(Client::printTeaDetails);
-        } catch (Exception e) {
+        } catch (IllegalStateException e) {
             e.printStackTrace();
         }
     }

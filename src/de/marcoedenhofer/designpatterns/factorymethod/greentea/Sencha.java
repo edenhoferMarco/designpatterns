@@ -1,6 +1,8 @@
-package de.marcoedenhofer.designpatterns.factorymethod;
+package de.marcoedenhofer.designpatterns.factorymethod.greentea;
 
-public class GreenTea implements ITea {
+import de.marcoedenhofer.designpatterns.factorymethod.ITea;
+
+public class Sencha implements ITea {
     @Override
     public String getTeaType() {
         return "Green Tea";
@@ -8,7 +10,7 @@ public class GreenTea implements ITea {
 
     @Override
     public String getDescription() {
-        return "Green tea, harvested in Japan";
+        return "Sencha tea";
     }
 
     @Override

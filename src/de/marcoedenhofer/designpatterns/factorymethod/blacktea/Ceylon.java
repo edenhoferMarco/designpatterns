@@ -1,6 +1,8 @@
-package de.marcoedenhofer.designpatterns.factorymethod;
+package de.marcoedenhofer.designpatterns.factorymethod.blacktea;
 
-public class BlackTea implements ITea {
+import de.marcoedenhofer.designpatterns.factorymethod.ITea;
+
+public class Ceylon implements ITea {
     @Override
     public String getTeaType() {
         return "Black Tea";
@@ -8,7 +10,7 @@ public class BlackTea implements ITea {
 
     @Override
     public String getDescription() {
-        return "Darjeeling second flush";
+        return "Ceylon tea";
     }
 
     @Override
